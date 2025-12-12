@@ -1,1 +1,66 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détail Projet Heinsen-Prono – Mohamed Elhawawshi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header>
+    <h1>Détail du Projet : Heinsen-Prono.com</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="realisations.html">Retour aux Réalisations</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle-button">&#127765;</button>
+  </header>
+
+  <main>
+    <section>
+      <h2>&#9733; Site Web Client : Heinsen-Prono.com</h2>
+      <hr>
+
+      <p>
+          **Objectif :** Création d'un site professionnel pour un client dans le domaine du pronostic. 
+          Le projet a nécessité la mise en place d'une plateforme fonctionnelle, esthétique, et capable de gérer du contenu dynamique.
+      </p>
+      <p>
+          **Technologies :** Mise en œuvre de **WordPress** pour la gestion de contenu, complétée par la modification de code **HTML, CSS, et PHP** pour des ajustements de design spécifiques non réalisables via les options par défaut du thème.
+      </p>
+      
+      <div style="text-align: center; margin-top: 30px;">
+          <h3>Aperçu de la Plateforme</h3>
+          <img src="images/heinsen-prono.jpg" alt="Capture d'écran du site Heinsen-Prono" style="width: 90%; max-width: 600px; border: 1px solid #ccc; border-radius: 8px;">
+      </div>
+    </section>
+  </main>
+
+  <footer class="fixed-bottom-footer">
+    <p>Contact : <a href="mailto:mohamedsh0938@gmail.com">mohamedsh0938@gmail.com</a></p>
+    <p class="social-links">
+        <a href="https://www.instagram.com/mohamedsayedh8" target="_blank" title="Instagram">&#128248;</a> 
+        <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn">&#128100;</a>
+    </p>
+    <p>© 2025</p>
+  </footer>
+  <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const isDark = localStorage.getItem('theme') === 'dark';
+    if (isDark) {
+        document.body.classList.add('dark-theme');
+        toggleButton.textContent = '☀️';
+    } else {
+        toggleButton.textContent = '🌒';
+    }
+    toggleButton.addEventListener('click', function() {
+        document.body.classList.toggle('dark-theme');
+        const isCurrentlyDark = document.body.classList.contains('dark-theme');
+        this.textContent = isCurrentlyDark ? '☀️' : '🌒';
+        localStorage.setItem('theme', isCurrentlyDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
