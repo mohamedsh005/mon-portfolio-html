@@ -18,6 +18,7 @@
   </header>
 
   <main>
+    
     <section>
       <h2>Cliquez sur une carte pour voir les détails</h2>
       <hr> 
@@ -85,7 +86,7 @@
         toggleButton.textContent = '🌒';
     }
 
-    // 2. Change le mode au clic et l'enregistre
+    // 2. Change le mode au clic et l'enregistre (ce qui le rend persistant)
     toggleButton.addEventListener('click', function() {
         document.body.classList.toggle('dark-theme');
         const isCurrentlyDark = document.body.classList.contains('dark-theme');
