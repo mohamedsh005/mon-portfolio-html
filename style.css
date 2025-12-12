@@ -17,7 +17,7 @@ body {
 /* Couleur principale (Vert Vif) */
 :root {
     --main-color: #27ae60; 
-    --secondary-color: #2ecc71; /* Vert plus clair pour le survol */
+    --secondary-color: #2ecc71;
 }
 
 /* En-tête et Navigation */
@@ -66,13 +66,13 @@ hr {
 
 /* Compétences Clés (Liste simple) */
 .main ul {
-    list-style-type: disc; /* Remet les puces par défaut */
+    list-style-type: disc;
     padding-left: 20px;
     margin-top: 15px;
 }
 
 .main ul li {
-    background-color: #e9ffea; /* Fond très léger lié au vert */
+    background-color: #e9ffea;
     border-left: 4px solid var(--main-color);
     padding: 10px 15px;
     margin-bottom: 8px;
@@ -80,13 +80,20 @@ hr {
 }
 
 
-/* Articles de Projet */
+/* --- 5. STYLE DES CARTES DE PROJET (CARD EFFECT) --- */
 .project-item {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 20px;
+    /* Style de carte */
+    border: none; /* Enlève la bordure simple */
+    border-radius: 8px; /* Coins légèrement arrondis */
+    padding: 25px;
     margin-bottom: 25px;
-    background-color: #fcfcfc;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Ombre légère pour effet 3D */
+    transition: box-shadow 0.3s ease; /* Transition douce */
+}
+
+.project-item:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Ombre accentuée au survol */
 }
 
 .project-item h3 {
@@ -96,6 +103,7 @@ hr {
     margin-bottom: 15px;
     font-size: 1.5em;
 }
+
 
 /* Bouton d'action */
 .cta-button {
@@ -122,10 +130,22 @@ hr {
     height: auto; 
 }
 
-/* Pied de page */
+/* --- 8. Pied de page (Footer) --- */
 footer { 
     margin-top: 40px; 
     text-align: center; 
     font-size: 0.85em; 
     color: #777; 
+}
+
+/* Style spécifique pour les liens sociaux dans le footer */
+.social-links a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
 }
