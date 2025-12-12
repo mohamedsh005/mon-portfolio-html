@@ -1,17 +1,18 @@
-/* --- 1. Réinitialisation et corps de la page (Body) --- */
+/* --- 0. Réinitialisation Globale --- */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box; /* Facilite la gestion des tailles et marges */
 }
 
+/* --- 1. Corps de la page (Body) --- */
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6; 
-    margin: 30px; 
-    background: #f7f7f7; 
+    line-height: 1.6; /* Améliore la lisibilité */
+    margin: 30px; /* Espace autour de tout le contenu */
+    background: #f7f7f7; /* Couleur de fond très claire */
     color: #222;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
 /* --- 2. En-tête (Header) et Navigation (Nav) --- */
@@ -23,7 +24,7 @@ header {
 
 h1 { 
     margin-bottom: 5px; 
-    color: #0b3d91; 
+    color: #0b3d91; /* Votre couleur bleue principale */
     font-size: 2.2em;
 }
 
@@ -36,6 +37,7 @@ nav a {
     transition: color 0.3s; 
 }
 
+/* Effet au survol des liens */
 nav a:hover {
     color: #1a5ac2; 
     border-bottom: 2px solid #1a5ac2;
@@ -44,26 +46,61 @@ nav a:hover {
 
 /* --- 3. Contenu principal (Main) --- */
 main {
-    max-width: 900px; 
-    margin: 0 auto; 
+    max-width: 900px; /* Limite la largeur pour une meilleure lecture */
+    margin: 0 auto; /* Centre le contenu principal */
     background: #fff; 
     padding: 30px; 
     border-radius: 8px; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
 }
 
-.project-item {
-    padding: 15px 0;
-}
-
+/* Séparateur visuel entre les sections */
 hr {
     border: none;
     border-top: 1px solid #eee;
     margin: 20px 0;
 }
 
+/* --- 4. Mise en forme des COMPÉTENCES CLÉS (Amélioration de la liste) --- */
+.main ul {
+    list-style-type: none; /* Enlève les puces par défaut */
+    padding-left: 0;
+    margin-top: 15px;
+}
 
-/* --- 4. Bouton d'action (CTA) sur index.html --- */
+.main ul li {
+    background-color: #e9f0ff; /* Léger fond bleu clair */
+    border-left: 4px solid #0b3d91; /* Bordure bleue pour l'impact */
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+
+/* --- 5. Mise en forme des ARTICLES DE PROJET (Amélioration de la présentation) --- */
+.project-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #fcfcfc; /* Fond très léger */
+}
+
+.project-item h3 {
+    color: #0b3d91; /* Titre du projet en bleu */
+    border-bottom: 2px solid #0b3d91;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+/* Pour mettre en évidence les mots clés (Fonction, Objectif, etc.) */
+.project-item p strong {
+    color: #444; 
+}
+
+
+/* --- 6. Bouton d'action (CTA) sur index.html --- */
 .cta-button {
     display: inline-block; 
     background-color: #0b3d91;
@@ -82,7 +119,14 @@ hr {
 }
 
 
-/* --- 5. Pied de page (Footer) --- */
+/* --- 7. Images et Multi-images (Loopa) --- */
+/* Pour s'assurer que les images ne dépassent pas la taille de l'article */
+.project-item img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+/* --- 8. Pied de page (Footer) --- */
 footer { 
     margin-top: 40px; 
     text-align: center; 
