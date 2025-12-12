@@ -14,6 +14,7 @@
       <a href="index.html">Accueil</a>
       <a href="realisations.html">Réalisations</a>
     </nav>
+    <button id="theme-toggle" class="theme-toggle-button">&#127765;</button>
   </header>
 
   <main>
@@ -33,10 +34,18 @@
   <footer>
     <p>Contact : <a href="mailto:mohamedsh0938@gmail.com">mohamedsh0938@gmail.com</a></p>
     <p class="social-links">
-        <a href="https://www.instagram.com/mohamedsayedh8" target="_blank">Instagram</a> | 
-        <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/mohamedsayedh8" target="_blank" title="Instagram">&#128248; Instagram</a> | 
+        <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn">&#128100; LinkedIn</a>
     </p>
     <p>© 2025</p>
   </footer>
+
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-theme');
+      this.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌒';
+      // Remarque : Pour que ce soit permanent sur toutes les pages, il faudrait une ligne de code supplémentaire.
+    });
+  </script>
 </body>
 </html>
