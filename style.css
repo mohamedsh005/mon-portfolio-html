@@ -9,11 +9,12 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 30px;
-    background: #f7f7f7;
+    background: #f7f7f7; /* Couleur du fond CLAIR */
     color: #222;
     min-height: 100vh;
     transition: background-color 0.3s, color 0.3s;
-    padding-bottom: 80px;
+    /* CECI EST ESSENTIEL : Réserve l'espace pour le footer fixe (hauteur 80px) */
+    padding-bottom: 80px; 
 }
 
 /* Couleur principale (Vert Vif) */
@@ -22,17 +23,79 @@ body {
     --secondary-color: #2ecc71;
 }
 
-/* --- STYLE DARK MODE (Les classes sont dans le code précédent) --- */
+/* --- STYLE DARK MODE --- */
 body.dark-theme {
     background: #121212;
     color: #f7f7f7;
 }
-/* ... autres styles dark mode ... */
+
+body.dark-theme main {
+    background: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .project-item {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .project-item h3 {
+    border-bottom: 2px solid #5a5a5a;
+}
+
+body.dark-theme .main ul li {
+    background-color: #333;
+    border-left: 4px solid var(--secondary-color);
+}
+/* --- FIN DARK MODE --- */
 
 
 /* En-tête et Navigation */
-/* ... styles de header, h1, nav ... */
-/* ... styles du bouton de thème ... */
+header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+h1 { 
+    margin-bottom: 5px; 
+    color: var(--main-color);
+    font-size: 2.2em;
+}
+
+nav a { 
+    margin: 0 15px;
+    padding: 5px 0;
+    text-decoration: none; 
+    color: var(--main-color);
+    font-weight: bold;
+    transition: color 0.3s; 
+}
+
+nav a:hover {
+    color: var(--secondary-color); 
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Style du bouton de thème */
+.theme-toggle-button {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1; 
+    color: #444; 
+    transition: color 0.3s;
+}
+
+body.dark-theme .theme-toggle-button {
+    color: #f7f7f7; 
+}
 
 
 /* Contenu principal */
@@ -52,7 +115,19 @@ hr {
 }
 
 /* Compétences Clés (Liste simple) */
-/* ... styles des ul et ul li ... */
+.main ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.main ul li {
+    background-color: #e9ffea;
+    border-left: 4px solid var(--main-color);
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
 
 
 /* --- GRILLE DE CARTES --- */
@@ -63,13 +138,6 @@ hr {
     margin-top: 20px;
 }
 
-/* Style des liens cliquables pour les cartes */
-a.project-card-link {
-    text-decoration: none; /* Enlève le soulignement du lien */
-    color: inherit; /* Utilise la couleur du texte parent (noir/blanc) */
-}
-
-
 /* Articles de Projet (Cartes) */
 .project-item {
     border: none;
@@ -78,14 +146,12 @@ a.project-card-link {
     margin-bottom: 0;
     background-color: #ffffff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s ease, transform 0.2s;
+    transition: box-shadow 0.3s ease;
     text-align: center;
-    height: 100%; /* Assure que toutes les cartes ont la même hauteur */
 }
 
-a.project-card-link:hover .project-item {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Ombre plus forte au survol */
-    transform: translateY(-5px); /* Monte légèrement la carte */
+.project-item:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
 .project-item h3 {
@@ -97,20 +163,68 @@ a.project-card-link:hover .project-item {
 }
 
 .project-item p {
-    text-align: center; /* Centre le texte descriptif sous le titre */
-    font-size: 0.9em;
+    text-align: center;
 }
 
+
 /* Bouton d'action */
-/* ... styles du bouton CTA ... */
+.cta-button {
+    display: inline-block; 
+    background-color: var(--main-color);
+    color: white !important; 
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+}
 
 
 /* Images */
-/* Retire les styles d'images car elles ne sont plus dans la carte de réalisation.html */
 .project-item img {
-    display: none; 
+    max-width: 100%; 
+    height: auto; 
 }
 
+/* --- Pied de page FIXE (avec la bonne classe) --- */
+.fixed-bottom-footer { 
+    position: fixed; /* Le rend fixe */
+    bottom: 0; /* Le colle en bas */
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center; 
+    font-size: 0.85em; 
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+    color: #777; 
+}
 
-/* Pied de page FIXE */
-/* ... styles du footer fixe ... */
+body.dark-theme .fixed-bottom-footer {
+    background-color: #1e1e1e;
+    border-top: 1px solid #333;
+    color: #bbb;
+}
+
+/* Style des liens sociaux dans le footer */
+.social-links a {
+    font-size: 24px; 
+    margin: 0 10px; 
+    transition: transform 0.2s;
+    color: #444; 
+    text-decoration: none; 
+}
+
+body.dark-theme .social-links a {
+    color: #bbb;
+}
+
+.social-links a:hover {
+    transform: scale(1.15); 
+}
