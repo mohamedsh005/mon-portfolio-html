@@ -86,13 +86,13 @@ nav a:hover {
     border: none;
     cursor: pointer;
     padding: 0;
-    line-height: 1; /* Assure un bon alignement du symbole */
-    color: #444; /* Couleur de l'icône en mode clair */
+    line-height: 1; 
+    color: #444; 
     transition: color 0.3s;
 }
 
 body.dark-theme .theme-toggle-button {
-    color: #f7f7f7; /* Couleur de l'icône en mode sombre */
+    color: #f7f7f7; 
 }
 
 
@@ -160,14 +160,12 @@ hr {
     padding: 10px 20px;
     margin-top: 15px;
     border-radius: 5px;
-    text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s;
 }
 
 .cta-button:hover {
     background-color: var(--secondary-color);
-    text-decoration: none;
 }
 
 
@@ -187,12 +185,17 @@ footer {
 
 /* Style des liens sociaux dans le footer */
 .social-links a {
-    color: var(--main-color);
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 5px;
+    font-size: 24px; 
+    margin: 0 10px; 
+    transition: transform 0.2s;
+    color: #444; 
+    text-decoration: none; /* Enlève le soulignement */
+}
+
+body.dark-theme .social-links a {
+    color: #bbb;
 }
 
 .social-links a:hover {
-    text-decoration: underline;
+    transform: scale(1.15); 
 }
