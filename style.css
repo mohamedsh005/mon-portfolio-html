@@ -26,12 +26,13 @@ body {
 /* --- STYLE DARK MODE --- */
 body.dark-theme {
     background: #121212;
-    color: #f7f7f7;
+    color: #f7f7f7; /* Couleur du texte général blanc/clair */
 }
 
 body.dark-theme main {
     background: #1e1e1e;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    color: #f7f7f7; /* Assure que le texte dans le main est clair */
 }
 
 body.dark-theme .project-item {
@@ -157,9 +158,8 @@ a.project-card-link {
     height: 100%;
 }
 
-a.project-card-link:hover .project-item {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
-    transform: translateY(-5px); 
+.project-item:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
 .project-item h3 {
@@ -172,7 +172,6 @@ a.project-card-link:hover .project-item {
 
 .project-item p {
     text-align: center;
-    font-size: 0.9em;
 }
 
 
@@ -208,7 +207,7 @@ a.project-card-link:hover .project-item {
     padding: 10px 0;
     text-align: center; 
     font-size: 0.85em; 
-    background-color: #fff;
+    background-color: #fff; /* Fond clair */
     border-top: 1px solid #ddd;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
     z-index: 1000;
@@ -216,8 +215,9 @@ a.project-card-link:hover .project-item {
 }
 
 body.dark-theme .fixed-bottom-footer {
-    background-color: #1e1e1e;
-    border-top: 1px solid #333;
+    /* Rend le fond sombre semi-transparent (0.9) */
+    background-color: rgba(30, 30, 30, 0.9); 
+    border-top: none; /* Supprime la bordure pour le look transparent */
     color: #bbb;
 }
 
