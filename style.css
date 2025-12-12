@@ -9,9 +9,10 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 30px;
-    background: #f7f7f7;
+    background: #f7f7f7; /* Couleur du fond CLAIR */
     color: #222;
     min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s; /* Transition pour le mode sombre */
 }
 
 /* Couleur principale (Vert Vif) */
@@ -20,11 +21,39 @@ body {
     --secondary-color: #2ecc71;
 }
 
+/* --- STYLE DARK MODE --- */
+body.dark-theme {
+    background: #121212; /* Fond SOMBRE */
+    color: #f7f7f7;
+}
+
+body.dark-theme main {
+    background: #1e1e1e; /* Fond principal SOMBRE */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .project-item {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .project-item h3 {
+    border-bottom: 2px solid #5a5a5a;
+}
+
+body.dark-theme .main ul li {
+    background-color: #333;
+    border-left: 4px solid var(--secondary-color);
+}
+/* --- FIN DARK MODE --- */
+
+
 /* En-tête et Navigation */
 header {
     text-align: center;
     padding: 20px 0;
     margin-bottom: 30px;
+    position: relative; /* Pour positionner le bouton */
 }
 
 h1 { 
@@ -45,6 +74,25 @@ nav a {
 nav a:hover {
     color: var(--secondary-color); 
     border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Style du bouton de thème (Position en haut à droite) */
+.theme-toggle-button {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1; /* Assure un bon alignement du symbole */
+    color: #444; /* Couleur de l'icône en mode clair */
+    transition: color 0.3s;
+}
+
+body.dark-theme .theme-toggle-button {
+    color: #f7f7f7; /* Couleur de l'icône en mode sombre */
 }
 
 
@@ -80,20 +128,19 @@ hr {
 }
 
 
-/* --- 5. STYLE DES CARTES DE PROJET (CARD EFFECT) --- */
+/* Articles de Projet (Cartes) */
 .project-item {
-    /* Style de carte */
-    border: none; /* Enlève la bordure simple */
-    border-radius: 8px; /* Coins légèrement arrondis */
+    border: none;
+    border-radius: 8px;
     padding: 25px;
     margin-bottom: 25px;
     background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Ombre légère pour effet 3D */
-    transition: box-shadow 0.3s ease; /* Transition douce */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
 }
 
 .project-item:hover {
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Ombre accentuée au survol */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
 .project-item h3 {
@@ -130,7 +177,7 @@ hr {
     height: auto; 
 }
 
-/* --- 8. Pied de page (Footer) --- */
+/* Pied de page */
 footer { 
     margin-top: 40px; 
     text-align: center; 
@@ -138,7 +185,7 @@ footer {
     color: #777; 
 }
 
-/* Style spécifique pour les liens sociaux dans le footer */
+/* Style des liens sociaux dans le footer */
 .social-links a {
     color: var(--main-color);
     text-decoration: none;
