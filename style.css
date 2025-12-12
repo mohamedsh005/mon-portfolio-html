@@ -1,21 +1,26 @@
-/* --- 0. Réinitialisation Globale --- */
+/* Styles de base */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Facilite la gestion des tailles et marges */
+    box-sizing: border-box;
 }
 
-/* --- 1. Corps de la page (Body) --- */
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6; /* Améliore la lisibilité */
-    margin: 30px; /* Espace autour de tout le contenu */
-    background: #f7f7f7; /* Couleur de fond très claire */
+    line-height: 1.6;
+    margin: 30px;
+    background: #f7f7f7;
     color: #222;
     min-height: 100vh;
 }
 
-/* --- 2. En-tête (Header) et Navigation (Nav) --- */
+/* Couleur principale (Vert Vif) */
+:root {
+    --main-color: #27ae60; 
+    --secondary-color: #2ecc71; /* Vert plus clair pour le survol */
+}
+
+/* En-tête et Navigation */
 header {
     text-align: center;
     padding: 20px 0;
@@ -24,7 +29,7 @@ header {
 
 h1 { 
     margin-bottom: 5px; 
-    color: #0b3d91; /* Votre couleur bleue principale */
+    color: var(--main-color);
     font-size: 2.2em;
 }
 
@@ -32,78 +37,70 @@ nav a {
     margin: 0 15px;
     padding: 5px 0;
     text-decoration: none; 
-    color: #0b3d91; 
+    color: var(--main-color);
     font-weight: bold;
     transition: color 0.3s; 
 }
 
-/* Effet au survol des liens */
 nav a:hover {
-    color: #1a5ac2; 
-    border-bottom: 2px solid #1a5ac2;
+    color: var(--secondary-color); 
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 
-/* --- 3. Contenu principal (Main) --- */
+/* Contenu principal */
 main {
-    max-width: 900px; /* Limite la largeur pour une meilleure lecture */
-    margin: 0 auto; /* Centre le contenu principal */
-    background: #fff; 
-    padding: 30px; 
-    border-radius: 8px; 
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
 }
 
-/* Séparateur visuel entre les sections */
 hr {
     border: none;
     border-top: 1px solid #eee;
     margin: 20px 0;
 }
 
-/* --- 4. Mise en forme des COMPÉTENCES CLÉS (Amélioration de la liste) --- */
+/* Compétences Clés (Liste simple) */
 .main ul {
-    list-style-type: none; /* Enlève les puces par défaut */
-    padding-left: 0;
+    list-style-type: disc; /* Remet les puces par défaut */
+    padding-left: 20px;
     margin-top: 15px;
 }
 
 .main ul li {
-    background-color: #e9f0ff; /* Léger fond bleu clair */
-    border-left: 4px solid #0b3d91; /* Bordure bleue pour l'impact */
+    background-color: #e9ffea; /* Fond très léger lié au vert */
+    border-left: 4px solid var(--main-color);
     padding: 10px 15px;
     margin-bottom: 8px;
     border-radius: 4px;
 }
 
 
-/* --- 5. Mise en forme des ARTICLES DE PROJET (Amélioration de la présentation) --- */
+/* Articles de Projet */
 .project-item {
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 20px;
     margin-bottom: 25px;
-    background-color: #fcfcfc; /* Fond très léger */
+    background-color: #fcfcfc;
 }
 
 .project-item h3 {
-    color: #0b3d91; /* Titre du projet en bleu */
-    border-bottom: 2px solid #0b3d91;
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
     padding-bottom: 5px;
     margin-bottom: 15px;
     font-size: 1.5em;
 }
 
-/* Pour mettre en évidence les mots clés (Fonction, Objectif, etc.) */
-.project-item p strong {
-    color: #444; 
-}
-
-
-/* --- 6. Bouton d'action (CTA) sur index.html --- */
+/* Bouton d'action */
 .cta-button {
     display: inline-block; 
-    background-color: #0b3d91;
+    background-color: var(--main-color);
     color: white !important; 
     padding: 10px 20px;
     margin-top: 15px;
@@ -114,19 +111,18 @@ hr {
 }
 
 .cta-button:hover {
-    background-color: #1a5ac2;
+    background-color: var(--secondary-color);
     text-decoration: none;
 }
 
 
-/* --- 7. Images et Multi-images (Loopa) --- */
-/* Pour s'assurer que les images ne dépassent pas la taille de l'article */
+/* Images */
 .project-item img {
     max-width: 100%; 
     height: auto; 
 }
 
-/* --- 8. Pied de page (Footer) --- */
+/* Pied de page */
 footer { 
     margin-top: 40px; 
     text-align: center; 
