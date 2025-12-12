@@ -20,8 +20,20 @@
   <main>
     
     <section>
+      <h2>Mes Compétences Clés</h2>
+      <p>Synthèse des compétences techniques utilisées dans le cadre de ces projets :</p>
+      <ul>
+          <li>HTML/CSS : Structuration de pages et design web.</li>
+          <li>Développement Web : Utilisation de WordPress et intégration/modification de code (PHP/JavaScript).</li>
+          <li>Versionnement : Maîtrise de Git pour le suivi et le déploiement via GitHub Pages.</li>
+          <li>Développement Mobile : Conception d'interfaces d'applications sur Android Studio.</li>
+      </ul>
+    </section>
+
+    <hr> 
+    
+    <section>
       <h2>Cliquez sur une carte pour voir les détails</h2>
-      <hr> 
 
       <div class="projects-grid">
       
@@ -29,7 +41,7 @@
           <article class="project-item">
             <h3>1. Site Web Client : Heinsen-Prono.com</h3>
             <p>
-                Plateforme WordPress personnalisée pour un client (pronostics).
+                Objectif : Plateforme WordPress personnalisée pour un client (pronostics).
             </p>
           </article>
         </a>
@@ -38,7 +50,7 @@
           <article class="project-item">
             <h3>&#10003; 2. Application Mobile : Loopa</h3>
             <p>
-                Application de suivi d'habitudes (Habit Tracker) en développement sur Android Studio.
+                Fonction : Application de suivi d'habitudes (Habit Tracker) en développement sur Android Studio.
             </p>
           </article>
         </a>
@@ -47,7 +59,7 @@
           <article class="project-item">
             <h3>&#128161; 3. Application : AI Tutor</h3>
             <p>
-                Tuteur IA pour résumer des textes et analyser le contenu des images (en développement).
+                Fonction : Tuteur IA pour résumer des textes et analyser le contenu des images (en développement).
             </p>
           </article>
         </a>
@@ -68,8 +80,8 @@
   <footer class="fixed-bottom-footer">
     <p>Contact : <a href="mailto:mohamedsh0938@gmail.com">mohamedsh0938@gmail.com</a></p>
     <p class="social-links">
-        <a href="https://www.instagram.com/mohamedsayedh8" target="_blank" title="Instagram">&#128248;</a> 
-        <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn">&#128100;</a>
+        <a href="https://www.instagram.com/mohamedsayedh8" target="_blank" title="Instagram">Instagram</a> |
+        <a href="https://www.linkedin.com/in/mohamed-elhawawshi-6024a92a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn">LinkedIn</a>
     </p>
     <p>© 2025</p>
   </footer>
@@ -78,7 +90,6 @@
     const toggleButton = document.getElementById('theme-toggle');
     const isDark = localStorage.getItem('theme') === 'dark';
 
-    // 1. Charge le mode sombre s'il est enregistré
     if (isDark) {
         document.body.classList.add('dark-theme');
         toggleButton.textContent = '☀️';
@@ -86,7 +97,6 @@
         toggleButton.textContent = '🌒';
     }
 
-    // 2. Change le mode au clic et l'enregistre (ce qui le rend persistant)
     toggleButton.addEventListener('click', function() {
         document.body.classList.toggle('dark-theme');
         const isCurrentlyDark = document.body.classList.contains('dark-theme');
