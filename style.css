@@ -13,7 +13,7 @@ body {
     color: #222;
     min-height: 100vh;
     transition: background-color 0.3s, color 0.3s;
-    /* CECI EST ESSENTIEL : Réserve l'espace pour le footer fixe (hauteur 80px) */
+    /* CECI RÉSERVE L'ESPACE POUR LE FOOTER FIXE */
     padding-bottom: 80px; 
 }
 
@@ -138,6 +138,12 @@ hr {
     margin-top: 20px;
 }
 
+/* Style des liens cliquables pour les cartes */
+a.project-card-link {
+    text-decoration: none; 
+    color: inherit; 
+}
+
 /* Articles de Projet (Cartes) */
 .project-item {
     border: none;
@@ -146,12 +152,14 @@ hr {
     margin-bottom: 0;
     background-color: #ffffff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.2s;
     text-align: center;
+    height: 100%;
 }
 
-.project-item:hover {
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+a.project-card-link:hover .project-item {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+    transform: translateY(-5px); 
 }
 
 .project-item h3 {
@@ -164,6 +172,7 @@ hr {
 
 .project-item p {
     text-align: center;
+    font-size: 0.9em;
 }
 
 
@@ -190,10 +199,10 @@ hr {
     height: auto; 
 }
 
-/* --- Pied de page FIXE (avec la bonne classe) --- */
+/* --- Pied de page FIXE --- */
 .fixed-bottom-footer { 
-    position: fixed; /* Le rend fixe */
-    bottom: 0; /* Le colle en bas */
+    position: fixed; 
+    bottom: 0;
     left: 0;
     width: 100%;
     padding: 10px 0;
