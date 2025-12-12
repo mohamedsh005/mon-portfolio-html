@@ -18,60 +18,50 @@
   </header>
 
   <main>
-    
     <section>
-      <h2>Mes Compétences Clés</h2>
-      <p>Synthèse des compétences techniques utilisées dans le cadre de ces projets :</p>
-      <ul>
-          <li>HTML/CSS : Structuration de pages et design web.</li>
-          <li>Développement Web : Utilisation de WordPress et intégration/modification de code (PHP/JavaScript).</li>
-          <li>Versionnement : Maîtrise de Git pour le suivi et le déploiement via GitHub Pages.</li>
-          <li>Développement Mobile : Conception d'interfaces d'applications sur Android Studio.</li>
-      </ul>
-    </section>
-
-    <hr> 
-    
-    <section>
-      <h2>Détail de mes Projets Personnels & Clients</h2>
+      <h2>Cliquez sur une carte pour voir les détails</h2>
+      <hr> 
 
       <div class="projects-grid">
       
-        <article class="project-item">
-          <h3>1. Site Web Client : Heinsen-Prono.com</h3>
-          <p>
-              Objectif : Création d'un site professionnel pour un client dans le domaine du pronostic. Le projet a nécessité la mise en place d'une plateforme fonctionnelle sur WordPress, avec personnalisation en HTML/CSS/PHP.
-          </p>
-          <img src="images/heinsen-prono.jpg" alt="Capture d'écran du site Heinsen-Prono" style="max-width: 100%; height: auto; margin: 15px 0; border: 1px solid #ccc;">
-        </article>
+        <a href="projet-heinsen.html" class="project-card-link">
+          <article class="project-item">
+            <h3>1. Site Web Client : Heinsen-Prono.com</h3>
+            <p>
+                Plateforme WordPress personnalisée pour un client (pronostics).
+            </p>
+          </article>
+        </a>
 
-        <article class="project-item">
-          <h3>&#10003; 2. Application Mobile : Loopa (Suivi d'Habitudes) - En développement</h3>
-          <p>
-              Fonction : Loopa est une application de suivi d'habitudes (Habit Tracker). L'objectif est de motiver l'utilisateur à créer et maintenir de bonnes habitudes grâce à une interface intuitive.
-          </p>
-          <img src="images/loopa.jpg" alt="Écran de suivi d'habitude Loopa" style="max-width: 100%; height: auto; margin: 15px 0; border: 1px solid #ccc;">
-        </article>
+        <a href="projet-loopa.html" class="project-card-link">
+          <article class="project-item">
+            <h3>&#10003; 2. Application Mobile : Loopa</h3>
+            <p>
+                Application de suivi d'habitudes (Habit Tracker) en développement sur Android Studio.
+            </p>
+          </article>
+        </a>
         
-        <article class="project-item">
-          <h3>&#128161; 3. Application : AI Tutor (Tuteur IA) - En développement</h3>
-          <p>
-              Fonction : AI Tutor est une application d'aide à l'étude basée sur l'IA. Elle permet de résumer des textes complexes et d'analyser le contenu d'images pour fournir des explications ciblées.
-          </p>
-          <img src="images/ai-tutor.png" alt="Capture d'écran de l'application AI Tutor" style="max-width: 100%; height: auto; margin: 15px 0; border: 1px solid #ccc;">
-        </article>
+        <a href="projet-aitutor.html" class="project-card-link">
+          <article class="project-item">
+            <h3>&#128161; 3. Application : AI Tutor</h3>
+            <p>
+                Tuteur IA pour résumer des textes et analyser le contenu des images (en développement).
+            </p>
+          </article>
+        </a>
 
-        <article class="project-item">
-          <h3>4. Ce Portfolio (Site web personnel)</h3>
-          <p>
-              Objectif : Démontrer ma capacité à structurer, styler et déployer un site web statique multi-pages de A à Z.
-          </p>
-          <p>
-              Outils : HTML, CSS, et déploiement via GitHub Pages.
-          </p>
-        </article>
+        <a href="projet-portfolio.html" class="project-card-link">
+          <article class="project-item">
+            <h3>4. Ce Portfolio (Site web personnel)</h3>
+            <p>
+                Objectif : Démontrer ma capacité à structurer, styler et déployer un site web statique.
+            </p>
+          </article>
+        </a>
 
-      </div> </section>
+      </div>
+    </section>
   </main>
 
   <footer class="fixed-bottom-footer">
@@ -84,9 +74,23 @@
   </footer>
 
   <script>
-    document.getElementById('theme-toggle').addEventListener('click', function() {
-      document.body.classList.toggle('dark-theme');
-      this.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌒';
+    const toggleButton = document.getElementById('theme-toggle');
+    const isDark = localStorage.getItem('theme') === 'dark';
+
+    // 1. Charge le mode sombre s'il est enregistré
+    if (isDark) {
+        document.body.classList.add('dark-theme');
+        toggleButton.textContent = '☀️';
+    } else {
+        toggleButton.textContent = '🌒';
+    }
+
+    // 2. Change le mode au clic et l'enregistre
+    toggleButton.addEventListener('click', function() {
+        document.body.classList.toggle('dark-theme');
+        const isCurrentlyDark = document.body.classList.contains('dark-theme');
+        this.textContent = isCurrentlyDark ? '☀️' : '🌒';
+        localStorage.setItem('theme', isCurrentlyDark ? 'dark' : 'light');
     });
   </script>
 </body>
